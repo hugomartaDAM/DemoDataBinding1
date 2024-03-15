@@ -7,56 +7,37 @@ namespace DemoDataBinding1
         public Form1()
         {
             InitializeComponent();
-            //dades exemple 2
-            Llibre llibre1 = new Llibre("El Quixot", "Miguel de Cervantes", 1605, false);
-            Llibre llibre2 = new Llibre("Mecanoscrit del segon origen", "Manuel de Pedrolo", 1974, false);
-            Llibre llibre3 = new Llibre("1984", "George Orwell", 1949, true);
 
-            //afegir els llibres a la llista "llibres"
-            List<Llibre> llibres= new List<Llibre>();
-            llibres.Add(llibre1);
-            llibres.Add(llibre2);
-            llibres.Add(llibre3);
+            // Datos del primer alumno
+            Alumne alumne1 = new Alumne("Juan", "Martínez", "juan@example.com", new DateTime(2000, 5, 10), true, true, false, true);
 
-            //binding exemple 2
-            //BindingSource bs = new BindingSource();
+            // Agregar los alumnos a la lista
+            List<Alumne> alumnes = new List<Alumne>();
+            alumnes.Add(alumne1);
 
-            //binding exemple 3
+            // BindingSource
             bs = new BindingSource();
-            bs.DataSource= llibres;
-            ////combobox
-            //comboBoxLlibre.DataSource= bs;
-            //comboBoxLlibre.DisplayMember= "Titol";
-            ////
-            //textBoxAutor.DataBindings.Add("Text", bs, "Autor");
-            ////
-            //textBoxAny.DataBindings.Add("Text", bs, "Any");
-            ////
-            //checkBoxPrestat.DataBindings.Add("Checked", bs, "Prestat");
+            bs.DataSource = alumnes;
 
-            //binding exemple 3
-            //datagridview
+            // DataGridView
             grid.DataSource = bs;
-            //
-            textBoxTitol2.DataBindings.Add("Text", bs, "Titol");
-            //
-            textBoxAutor2.DataBindings.Add("Text", bs, "Autor");
-            //
-            textBoxAny2.DataBindings.Add("Text", bs, "Any");
-            //
-            //checkBoxPrestat2.DataBindings.Add("Checked", bs, "Prestat");
-            radioPrestat.DataBindings.Add("Checked", bs, "Prestat");
-            radioComprat.DataBindings.Add("Checked", bs, "Comprat");
 
-            //ocultar msg error
+            // Asignación de DataBindings
+            textBoxNom2.DataBindings.Add("Text", bs, "Nom");
+            textBoxCognoms2.DataBindings.Add("Text", bs, "Cognoms");
+            textBoxEmail2.DataBindings.Add("Text", bs, "Email");
+            dateTimePickerData2.DataBindings.Add("Text", bs, "Data_naixement");
+            radioMati.DataBindings.Add("Checked", bs, "Horari_mati");
+            radioTarda.DataBindings.Add("Checked", bs, "Horari_tarda");
+
+            // Asignación de DataBindings para los cursos
+            checkBoxCurs1.DataBindings.Add("Checked", bs, "Curset1");
+            checkBoxCurs2.DataBindings.Add("Checked", bs, "Curset2");
+            checkBoxCurs3.DataBindings.Add("Checked", bs, "Curset3");
+
+
+            // Ocultar mensaje de error
             labelError.Visible = false;
-
-            //demo teclat
-            ToolTip tip = new ToolTip();
-            tip.SetToolTip(buttonAfegir, "Ctrl+F5");
-            tip.SetToolTip(buttonEsborrar, "Ctrl+F8");
-            //definir shortcut per botó ajuda = Ctrl + F12
-            //buttonAjuda.ShortcutKeys = Keys.Control | Keys.F12;
         }
 
         //exemple 3
@@ -65,20 +46,20 @@ namespace DemoDataBinding1
         //    get { return bs; }
         //}
 
-    private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
             //exemple 1
-            label1.DataBindings.Add("Text", textBox1, "Text");
+            
         }
 
         private void buttonAfegir_Click(object sender, EventArgs e)
         {
             //crear llibre en blanc
-            Llibre llibreNou = new Llibre("", "", 0, false);
+            Alumne alumneNou = new Alumne();
             //afegir al bs
-            bs.Add(llibreNou);
+            bs.Add(alumneNou);
             //seleccionar el llibre nou al grid
-            int rowIndex = bs.IndexOf(llibreNou);
+            int rowIndex = bs.IndexOf(alumneNou);
             grid.CurrentCell = grid.Rows[rowIndex].Cells[1];
         }
 

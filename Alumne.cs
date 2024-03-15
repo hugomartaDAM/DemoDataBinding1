@@ -49,6 +49,20 @@ namespace DemoDataBinding1
             Curset2 = curset2;
             Curset3 = curset3;
         }
+        // Constructor vacío
+        public Alumne()
+        {
+            // Inicializa todas las propiedades con valores por defecto o vacíos
+            Nom = "";
+            Cognoms = "";
+            Email = "";
+            Data_naixement = DateTime.Now;
+            Horari_mati = false;
+            Horari_tarda = false;
+            Curset1 = false;
+            Curset2 = false;
+            Curset3 = false;
+        }
 
     }
 }
