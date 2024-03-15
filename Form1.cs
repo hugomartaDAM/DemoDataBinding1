@@ -9,11 +9,13 @@ namespace DemoDataBinding1
             InitializeComponent();
 
             // Datos del primer alumno
-            Alumne alumne1 = new Alumne("Juan", "Martínez", "juan@example.com", new DateTime(2000, 5, 10), true, true, false, true);
+            Alumne alumne1 = new Alumne("Juan", "Martínez", "juan@ejemplo.com", new DateTime(2003, 5, 10), true, true, false, true);
+            Alumne alumne2 = new Alumne("Marta", "Tendera", "marta@ejemplo.com", new DateTime(2004, 6, 5), true, true, true, false);
 
             // Agregar los alumnos a la lista
             List<Alumne> alumnes = new List<Alumne>();
             alumnes.Add(alumne1);
+            alumnes.Add(alumne2);
 
             // BindingSource
             bs = new BindingSource();
@@ -51,7 +53,7 @@ namespace DemoDataBinding1
             bs.Add(alumneNou);
             //seleccionar el llibre nou al grid
             int rowIndex = bs.IndexOf(alumneNou);
-            grid.CurrentCell = grid.Rows[rowIndex].Cells[1];
+            grid.CurrentCell = grid.Rows[rowIndex].Cells[0];
         }
 
         //exemple 3

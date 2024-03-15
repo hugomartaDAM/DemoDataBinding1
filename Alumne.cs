@@ -14,9 +14,6 @@ namespace DemoDataBinding1
         public DateTime Data_naixement {  get; set; }
         private bool _Horari_mati;
         private bool _Horari_tarda;
-        public bool Curset1 { get; set; }
-        public bool Curset2 { get; set; }
-        public bool Curset3 { get; set; }
 
         public bool Horari_mati
         {
@@ -36,6 +33,10 @@ namespace DemoDataBinding1
                 _Horari_tarda = value;
             }
         }
+
+        public bool Curset1 { get; set; }
+        public bool Curset2 { get; set; }
+        public bool Curset3 { get; set; }
 
         public Alumne(string nom, string cognoms, string email, DateTime dataNaixement, bool horariMati, bool curset1, bool curset2, bool curset3)
         {
