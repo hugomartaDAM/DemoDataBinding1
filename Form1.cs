@@ -27,29 +27,20 @@ namespace DemoDataBinding1
             textBoxCognoms2.DataBindings.Add("Text", bs, "Cognoms");
             textBoxEmail2.DataBindings.Add("Text", bs, "Email");
             dateTimePickerData2.DataBindings.Add("Text", bs, "Data_naixement");
+            // Asignación de DataBindings para el horario
             radioMati.DataBindings.Add("Checked", bs, "Horari_mati");
             radioTarda.DataBindings.Add("Checked", bs, "Horari_tarda");
-
             // Asignación de DataBindings para los cursos
             checkBoxCurs1.DataBindings.Add("Checked", bs, "Curset1");
             checkBoxCurs2.DataBindings.Add("Checked", bs, "Curset2");
             checkBoxCurs3.DataBindings.Add("Checked", bs, "Curset3");
 
-
             // Ocultar mensaje de error
             labelError.Visible = false;
         }
 
-        //exemple 3
-        //public BindingSource ComboBindingSource
-        //{
-        //    get { return bs; }
-        //}
-
         private void Form1_Load(object sender, EventArgs e)
-        {
-            //exemple 1
-            
+        { 
         }
 
         private void buttonAfegir_Click(object sender, EventArgs e)

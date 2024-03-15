@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tabControl1 = new TabControl();
             tabPage3 = new TabPage();
             checkBoxCurs3 = new CheckBox();
@@ -48,6 +49,7 @@
             label7 = new Label();
             textBoxEmail2 = new TextBox();
             textBoxCognoms2 = new TextBox();
+            toolTip1 = new ToolTip(components);
             tabControl1.SuspendLayout();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)grid).BeginInit();
@@ -91,7 +93,7 @@
             tabPage3.Padding = new Padding(3, 4, 3, 4);
             tabPage3.Size = new Size(867, 541);
             tabPage3.TabIndex = 2;
-            tabPage3.Text = "grid";
+            tabPage3.Text = "Acadèmia";
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // checkBoxCurs3
@@ -182,6 +184,7 @@
             buttonEsborrar.Size = new Size(126, 57);
             buttonEsborrar.TabIndex = 4;
             buttonEsborrar.Text = "ELIMINAR";
+            toolTip1.SetToolTip(buttonEsborrar, "Control + F8");
             buttonEsborrar.UseVisualStyleBackColor = true;
             buttonEsborrar.Click += buttonEsborrar_Click;
             // 
@@ -193,6 +196,7 @@
             buttonAfegir.Size = new Size(126, 61);
             buttonAfegir.TabIndex = 3;
             buttonAfegir.Text = "AFEGIR";
+            toolTip1.SetToolTip(buttonAfegir, "Control + F5");
             buttonAfegir.UseVisualStyleBackColor = true;
             buttonAfegir.Click += buttonAfegir_Click;
             // 
@@ -306,5 +310,6 @@
         private CheckBox checkBoxCurs3;
         private CheckBox checkBoxCurs2;
         private CheckBox checkBoxCurs1;
+        private ToolTip toolTip1;
     }
 }

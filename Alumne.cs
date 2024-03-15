@@ -56,7 +56,7 @@ namespace DemoDataBinding1
             Nom = "";
             Cognoms = "";
             Email = "";
-            Data_naixement = DateTime.Now;
+            Data_naixement = DateTime.Today;
             Horari_mati = false;
             Horari_tarda = false;
             Curset1 = false;
